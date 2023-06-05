@@ -1,0 +1,1 @@
+Einfacher Textgenerator mit schlechten Chucknorris Witzen
