@@ -1,19 +1,18 @@
 
 
 
-var first = readTextFile('chuck1.txt');
-var second = readTextFile('chuck2.txt');
-var third= readTextFile('chuck3.txt');
-generateString() ;
-function trigger() {
-    const element = document.querySelector('#textfeld');
+
+
+//generateString() ;
+function trigger(id) {
+    const element = document.querySelector(id);
     element.select();
     element.setSelectionRange(0, 99999);
     document.execCommand('copy');
 }
 
-function setText(tex) {
-    document.getElementById('textfeld').value =tex;
+function setText(text) {
+    document.getElementById('textfeld').value =text;
 }
 
 function generateString() {
@@ -39,9 +38,31 @@ function readTextFile(file) {
        }
     }
   }
-//  console.log(ReturnText);
+
   rawFile.send(null);
   return ReturnText;
+
+}
+
+
+function adr_set(adresse){
+  document.getElementById('adresse').value = adresse[1] + "; "  + adresse[3].replace('"','') + "; "  + adresse[4].replace('"','') + "; "  + adresse[6] + "; "  + adresse[8];
+  document.getElementById('email').value = adresse[14];
+  document.getElementById('tel').value = adresse[10];
+  document.getElementById('fax').value = adresse[12];
+
+  
+}
+
+function nameless(wert,lokal) {
+  if (lokal == true){
+    var adr = readTextFile(wert+'-adr.csv')
+    var adre1 = adr.split(",");
+    adr_set(adre1);
+  }
+  var text = readTextFile(wert+'.txt');
+ 
+  setText(text);  
 
 }
         

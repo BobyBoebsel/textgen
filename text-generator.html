@@ -1,24 +1,64 @@
 <!DOCTYPE html>
 <html lang="de">
     <head>
-        <meta charset=" "UTF-8">
+        <meta charset= "UTF-8">
         <link rel="stylesheet" href="mystyle.css">
-        <script language="javascript" type="text/javascript" src="functions.js"></script>
+       
         
         <title > Textgenerator</title>
     </head>
     <body>
         <div align="center">
+
         <h1> <img src="dhv.png"  height="100" width="100" />Textgenerator <img src="cropped-Die_FRAKTION.endgueltig.jpg" height="100" width="250" /></h1>
+        
       
+        <table> 
+            <tr>
+                <td>
+                   SPD <input type="radio" id="SPD" name="adresse" value="SPD" onclick="nameless(this.id,true)">
+                </td>
+                <td>
+                   GRUENE <input type="radio" id="GRUENE" name="adresse" value="GRUENE" onclick="nameless(this.id,true)">                    
+                </td>
+                <td>
+                    BIBS <input type="radio" id="BIBS" name="adresse" value="BIBS" onclick="nameless(this.id,true)">  
+                </td>
+                <td>
+                    FDP <input type="radio" id="FDP" name="adresse" value="FDP" onclick="nameless(this.id,true)">                     
+                </td>
+
+            </tr>
+
+        </table>   
+      
+        <table> 
+            <tr>
+                <td>
+                  Adresse:  <input type="text" id="adresse"  readonly>
+                </td>
+
+                <td>
+                  E-Mail  <input type="text" id="email"  name="email" readonly>  <button onclick="trigger('#email')">Click to Copy</button>
+                </td>
+            </tr>
+            <tr>     
+                <td>
+                  Tel  <input type="text" id="tel"   readonly>
+                </td>     
+                <td>
+                  FAX  <input type="text" id="fax" name="fax"  readonly> <button onclick="trigger('#fax')">Click to Copy</button>
+                </td>
+            </tr>
+            </table>
         <textarea id="textfeld" name="textfeld" rows="35" cols="200" readonly>
-            
+        
         </textarea>
         <br>
-        <button onclick="generateString()">Generate</button>
-        <button onclick="trigger()">Click to Copy</button>
+      <!------  <button onclick="generateString()">Generate</button> --->
+        <button onclick="trigger('#textfeld')">Click to Copy</button>
     </div>
-
+    <script language="javascript" type="text/javascript" src="functions.js"></script>
     </body>
 <html>
 
